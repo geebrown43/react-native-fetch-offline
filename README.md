@@ -1,4 +1,5 @@
 # react-native-fetch-offline
+Returns fetch object with cached data if user is offline
 
 ## Installation
 
@@ -18,7 +19,6 @@ yarn add react-native-fetch-offline # with yarn
   const requestOptions = {
     method: 'GET',
     offline: {
-      isCacheable: true,
       defaultResponse: {
         data: {
           myKey: 'myValue',
