@@ -3,8 +3,8 @@
 ## Installation
 
 ```
-npm install --save eact-native-fetch-offline # with npm
-yarn add eact-native-fetch-offline # with yarn
+npm install --save react-native-fetch-offline # with npm
+yarn add react-native-fetch-offline # with yarn
 ```
 
 ## How it works
