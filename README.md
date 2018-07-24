@@ -1,3 +1,6 @@
+
+<p align="center"><a href="https://travis-ci.org/hardeepamritsar/react-native-fetch-offline"><img src="https://api.travis-ci.org/hardeepamritsar/react-native-fetch-offline.svg?branch=master"/></a></p>
+
 # react-native-fetch-offline
 Returns fetch object with cached data if user is offline
 
