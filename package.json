@@ -1,11 +1,20 @@
 {
   "name": "react-native-fetch-offline",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "Returns fetch object with cached data if user is offline",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
+  "keywords": [
+    "offline",
+    "fetch",
+    "reachability",
+    "fetch offline",
+    "react native fetch",
+    "react native fetch offline",
+    "network"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hardeepamritsar/react-native-fetch-offline.git"
@@ -20,5 +29,14 @@
     "lodash": "^4.17.10",
     "object-hash": "^1.3.0",
     "react-native-reachability": "^1.0.4"
+  },
+  "jest": {},
+  "devDependencies": {
+    "babel-preset-react-native": "^4.0.0",
+    "jest": "^23.4.1",
+    "jest-cli": "^23.4.1",
+    "react": "^16.4.1",
+    "react-native": "^0.56.0",
+    "react-test-renderer": "^16.4.1"
   }
 }
