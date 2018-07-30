@@ -23,6 +23,7 @@ react-native link react-native-reachability
 
 ## How to use
 ```javascript
+import FetchOffline, { cacheReponse } from 'react-native-fetch-offline';
 
   const requestOptions = {
     method: 'GET',
