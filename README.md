@@ -11,6 +11,11 @@ npm install --save react-native-fetch-offline # with npm
 yarn add react-native-fetch-offline # with yarn
 ```
 
+Link react-native-reachability
+```
+react-native link react-native-reachability
+```
+
 ## How it works
 
 <p align="center"><a href="https://i.imgur.com/X5X9FFq.png"><img src="https://i.imgur.com/X5X9FFq.png"/></a></p>
