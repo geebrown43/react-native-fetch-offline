@@ -13,15 +13,7 @@ export default async function FetchOffline(url, options) {
 }
 
 async function getDataFromCache(url, options) {
-  const key = genrateKeyFor(url, options);
-  let data = await AsyncStorage.getItem(key);
-  if (data) {
-    data = JSON.parse(data);
-    data.savedOfflineResponse=true;
-  } else {
-    data = getDefaultResponseFromOptions(options);
-    data.savedDefaultResponse=true;
-  }
+  const data = await getFailCaseResponse(url, options);
   if (data) {
     return new Promise((resolve) => {
       resolve({
@@ -34,9 +26,22 @@ async function getDataFromCache(url, options) {
   }
   return Promise.reject(new Error('No Internet'));
 }
+ export async function getFailCaseResponse(url, options) {
+  const key = genrateKeyFor(url, options);
+  let data = await AsyncStorage.getItem(key);
+  if (data) {
+    data = JSON.parse(data);
+  } else {
+    data = getDefaultResponseFromOptions(options);
+  }
+  if(data){
+    data.fallbackResponse=true;
+  }
+  return data;
+}
 
 export function isResponseFromOnline(result){
-  if (result.savedOfflineResponse || result.savedDefaultResponse) {
+  if (result.fallbackResponse) {
     return false;
   } else {
     return true;
