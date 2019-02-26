@@ -1,7 +1,7 @@
 import { AsyncStorage } from 'react-native';
 import hash from 'object-hash';
 import omit from 'lodash/omit';
-import Network from 'react-native-reachability';
+import Network from 'react-native-internet-reachability';
 
 export default async function FetchOffline(url, options) {
   const isReachable = await Network.isReachable();
@@ -17,8 +17,10 @@ async function getDataFromCache(url, options) {
   let data = await AsyncStorage.getItem(key);
   if (data) {
     data = JSON.parse(data);
+    data.savedOfflineResponse=true;
   } else {
     data = getDefaultResponseFromOptions(options);
+    data.savedDefaultResponse=true;
   }
   if (data) {
     return new Promise((resolve) => {
@@ -33,6 +35,14 @@ async function getDataFromCache(url, options) {
   return Promise.reject(new Error('No Internet'));
 }
 
+export function isResponseFromOnline(result){
+  if (result.savedOfflineResponse || result.savedDefaultResponse) {
+    return false;
+  } else {
+    return true;
+  }
+
+}
 export function cacheReponse(url, options, responseBody) {
   const key = genrateKeyFor(url, options);
   AsyncStorage.setItem(key, JSON.stringify(responseBody));

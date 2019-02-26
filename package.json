@@ -1,6 +1,6 @@
 {
   "name": "react-native-fetch-offline",
-  "version": "1.0.1",
+  "version": "1.1.1004",
   "description": "Returns fetch object with cached data if user is offline",
   "main": "src/index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   "dependencies": {
     "lodash": "^4.17.10",
     "object-hash": "^1.3.0",
-    "react-native-reachability": "^1.0.4"
+    "react-native-internet-reachability": "^1.0.7"
   },
   "jest": {},
   "devDependencies": {

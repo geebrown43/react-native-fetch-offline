@@ -1,10 +1,10 @@
 import { AsyncStorage } from 'react-native';
-import Network from 'react-native-reachability';
+import Network from 'react-native-internet-reachability';
 import omit from 'lodash/omit';
 import hash from 'object-hash';
 import FetchOffline, { cacheReponse } from './index';
 
-jest.mock('react-native-reachability', () => ({
+jest.mock('react-native-internet-reachability', () => ({
   isReachable: jest.fn(),
 }));
 
