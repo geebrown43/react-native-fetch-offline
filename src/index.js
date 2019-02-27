@@ -41,7 +41,7 @@ async function getDataFromCache(url, options) {
 }
 
 export function isResponseFromOnline(result){
-  if (result.fallbackResponse) {
+  if (result && result.fallbackResponse) {
     return false;
   } else {
     return true;

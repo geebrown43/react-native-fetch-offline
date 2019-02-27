@@ -1,6 +1,6 @@
 {
   "name": "react-native-fetch-offline",
-  "version": "1.1.1005",
+  "version": "1.1.1006",
   "description": "Returns fetch object with cached data if user is offline",
   "main": "src/index.js",
   "scripts": {
