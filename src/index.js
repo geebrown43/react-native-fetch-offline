@@ -63,8 +63,10 @@ function getDefaultResponseFromOptions(options) {
 
 function genrateKeyFor(url, options, ignoredRoutesForCacheKey) {
   const providedOtions = omit(options, ['offline']);
-  for (var path in ignoredRoutesForCacheKey) {
-    _.set(providedOtions, path, '');
+  for (var key in ignoredRoutesForCacheKey) {
+    _.set(providedOtions, ignoredRoutesForCacheKey[key], '');
   }
+  console.tron.log(JSON.stringify(providedOtions));
+
   return `options:${hash(providedOtions)} url:${url}}`;
 }
