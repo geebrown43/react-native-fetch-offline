@@ -5,7 +5,10 @@ import omit from 'lodash/omit';
 import Network from 'react-native-internet-reachability';
 
 export default async function FetchOffline(url, options, ignoredRoutesForCacheKey) {
-  const isReachable = await Network.isReachable();
+  const reachabilityTimeout = options.reachabilityTimeout ? options.reachabilityTimeout : 5000;
+  const reachabilityDomain = options.reachabilityDomain ? options.reachabilityDomain : '8.8.8.8';
+ 
+  const isReachable = await Network.isReachable(reachabilityTimeout, reachabilityDomain);
   if (isReachable) {
     return fetch(url, options);
   } else {
